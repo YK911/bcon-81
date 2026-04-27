@@ -1,4 +1,4 @@
-# BootCAmp Online 81
+# BootCamp Online 81
 
 ## Course description
 
