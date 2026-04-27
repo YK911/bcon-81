@@ -13,6 +13,6 @@ By the end of the course, students will have a strong grasp of page rendering
 and performance optimization, enabling them to enhance user interface
 experiences across various online platforms.
 
-### View the HTML & CSS module structure by following the [link](html/README.md)
+### View the HTML & CSS module structure by following the [link](html+css/README.md)
 
 ### View the JavaScript module structure by following the [link](javascript/README.md)
