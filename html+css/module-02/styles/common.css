@@ -1,0 +1,71 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #111111;
+  background-color: #fafafa;
+
+  /*
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+  */
+}
+/* Reset */
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+}
+address {
+  font-style: normal;
+}
+
+.btn {
+  font-weight: 600;
+  line-height: 1.29;
+  color: #fff;
+  background-color: transparent;
+}
+.btn-primary {
+  background-color: #fd9222;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  color: #fd9222;
+  background: rgba(253, 146, 34, 0.1);
+}
+.btn-secondary {
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #fd9222;
+}
+.btn-dark {
+  font-size: 18px;
+  line-height: 1.33;
+  color: #111;
+}
+.btn-dark:hover,
+.btn-dark:focus {
+  color: #fff;
+  background: #fd9222;
+}
+
+/* Техніка приховування логічних заголовків */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

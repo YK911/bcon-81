@@ -13,42 +13,53 @@
       href="./images/chocolate.svg"
       type="image/svg+xml"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
   </head>
 
-  <body>
+  <body class="main-page">
     <!-- Header -->
-    <header id="header">
-      <a href="./index.html">
-        SIMPLY CHOCOLATE
+    <header class="header" id="header">
+      <a class="logo" href="./index.html">
+        <i>SIMPLY</i> CHOCOLATE
         <img
+          class="logo-icon"
           src="./images/chocolate.svg"
           alt="Site logo"
           width="24"
           height="24"
         />
       </a>
-      <nav>
-        <ul>
-          <li>
-            <a href="#header">Home</a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="#header">Home</a>
           </li>
-          <li>
-            <a href="#made">How it’s made?</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#made">How it’s made?</a>
           </li>
-          <li>
-            <a href="#reviews">Chocolate is loved</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Chocolate is loved</a>
           </li>
         </ul>
       </nav>
 
-      <ul>
-        <li>
+      <ul class="socials">
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
+              class="socials-icon"
               src="./images/icons/facebook.svg"
               alt="Facebook icon"
               width="24"
@@ -56,13 +67,15 @@
             />
           </a>
         </li>
-        <li>
+        <li class="socials-item">
           <a
+            class="socials-link"
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
+              class="socials-icon"
               src="./images/icons/instagram.svg"
               alt="Instagram icon"
               width="24"
@@ -70,9 +83,15 @@
             />
           </a>
         </li>
-        <li>
-          <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+        <li class="socials-item">
+          <a
+            href="https://x.com"
+            class="socials-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
+              class="socials-icon"
               src="./images/icons/twitter.svg"
               alt="X icon"
               width="24"
@@ -84,33 +103,41 @@
     </header>
     <main>
       <!-- Hero section -->
-      <section id="hero">
-        <h1>
+      <section class="hero" id="hero">
+        <h1 class="hero-title">
           Treat yourself or a loved one to our finest ingredients for a moment
           of pure delight!
         </h1>
-        <button type="button">Buy now</button>
-        <button type="button">How it’s made</button>
-        <a href="#benefits">scroll down</a>
+        <button class="btn btn-primary" type="button">Buy now</button>
+        <button class="btn btn-secondary" type="button">How it’s made</button>
+        <a class="hero-link" href="#benefits"
+          >scroll down
+          <img
+            class="hero-link-icon"
+            src="./images/icons/arrow-down.svg"
+            alt="Arrow down"
+            width="22"
+            height="22"
+        /></a>
       </section>
 
       <!-- Benefits section -->
-      <section id="benefits">
+      <section class="benfits" id="benefits">
         <!-- Logic heading -->
-        <h2>Benefits title</h2>
-        <ul>
-          <li>
-            <h3>Unsurpassed taste</h3>
-            <p>
+        <h2 class="sr-only">Benefits title</h2>
+        <ul class="benefits-list">
+          <li class="benefits-item">
+            <h3 class="benefits-caption">Unsurpassed taste</h3>
+            <p class="benefits-text">
               Crafted with the finest quality cocoa beans and a dedication to
               perfection, each bite is a decadent experience that simply cannot
               be matched. Savor the richness and complexity of our Unsurpassed
               Taste and discover a new level of chocolate bliss.
             </p>
           </li>
-          <li>
-            <h3>Affordable price</h3>
-            <p>
+          <li class="benefits-item">
+            <h3 class="benefits-caption">Affordable price</h3>
+            <p class="benefits-text">
               Indulge in high-quality chocolate without breaking the bank with
               Simply Chocolate's selection of affordable treats. Enjoy
               mouth-watering truffles and velvety chocolate bars without
@@ -118,9 +145,9 @@
               affordable luxury today.
             </p>
           </li>
-          <li>
-            <h3>Own production</h3>
-            <p>
+          <li class="benefits-item">
+            <h3 class="benefits-caption">Own production</h3>
+            <p class="benefits-text">
               We take pride in our own production process, ensuring that every
               step is carefully crafted to perfection. From selecting the finest
               ingredients to handcrafting each piece, our attention to detail is
@@ -132,7 +159,9 @@
 
       <!-- Ingredients section -->
       <section id="ingredients">
-        <h2>It all adds up to one exceptional taste sensation</h2>
+        <h2 class="section-title">
+          It all adds up to one exceptional taste sensation
+        </h2>
         <ul>
           <li>
             <img
@@ -202,7 +231,8 @@
 
       <!-- Made section -->
       <section id="made">
-        <h2>How it’s made?</h2>
+        <h2 class="section-title">How it’s made?</h2>
+
         <img src="./images/made/image.jpg" alt="" width="600" height="400" />
         <h3>
           Try our chocolates today and discover the perfect balance of flavor
@@ -229,7 +259,8 @@
 
       <!-- Products section -->
       <section id="products">
-        <h2>Our products</h2>
+        <h2 class="section-title">Our products</h2>
+
         <ul>
           <li>
             <img
@@ -390,7 +421,7 @@
           <li>
             <img
               src="./images/reviews/img-3.png"
-              alt="Olena Kampusch<"
+              alt="Olena Kampusch"
               width="80"
               height="80"
             />
@@ -402,7 +433,7 @@
             </p>
           </li>
         </ul>
-        <button type="button">Leave a review</button>
+        <button class="btn btn-dark" type="button">Leave a review</button>
       </section>
     </main>
     <!-- Footer -->

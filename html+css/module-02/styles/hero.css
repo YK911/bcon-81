@@ -1,0 +1,22 @@
+.hero {
+  background: rgba(17, 17, 17, 0.4);
+}
+.hero-title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.21;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.hero-link {
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.hero-link:hover,
+.hero-link:focus {
+  color: #fd9222;
+}
+.hero-link-icon {
+}

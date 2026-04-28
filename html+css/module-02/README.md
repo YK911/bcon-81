@@ -28,4 +28,3 @@
   - `letter-spacing`
   - `word-spacing`
   - `text-shadow`
-- CSS змінні
