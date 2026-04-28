@@ -1,0 +1,22 @@
+.reviews {
+}
+.section-title {
+}
+.reviews-list {
+}
+.reviews-item {
+}
+.reviews-avatar {
+}
+.reviews-author {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+}
+.reviews-text {
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: rgba(17, 17, 17, 0.7);
+}
