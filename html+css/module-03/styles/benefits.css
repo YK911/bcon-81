@@ -1,0 +1,18 @@
+.benefits {
+  background: #1e1823;
+}
+.benefits-list {
+}
+.benefits-item {
+}
+.benefits-caption {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #fff;
+}
+.benefits-text {
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.7);
+}

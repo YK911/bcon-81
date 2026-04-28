@@ -1,0 +1,55 @@
+.footer {
+  background: #1e1823;
+}
+.footer-slogan {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.21;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.footer-caption {
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #fff;
+}
+.socials {
+}
+.socials-item {
+}
+.socials-link {
+}
+.socials-icon {
+}
+.footer-contacts {
+}
+.footer-contacts-list {
+}
+.footer-contacts-item {
+}
+.footer-contacts-link {
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #fff;
+}
+.footer-contacts-link:hover,
+.footer-contacts-link:focus {
+  color: #fd9222;
+}
+.footer-menu {
+}
+.footer-menu-item {
+}
+.footer-menu-link {
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.footer-menu-link:hover,
+.footer-menu-link:focus {
+  color: #fd9222;
+}
