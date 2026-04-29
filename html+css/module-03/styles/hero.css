@@ -1,7 +1,14 @@
 .hero {
+  padding-bottom: 80px;
+}
+.hero-wrapper {
+  border-radius: 30px;
+  padding: 380px 40px 40px;
   background: rgba(17, 17, 17, 0.4);
 }
 .hero-title {
+  width: 484px;
+  margin-bottom: 32px;
   font-weight: 500;
   font-size: 28px;
   line-height: 1.21;
@@ -17,6 +24,13 @@
 .hero-link:hover,
 .hero-link:focus {
   color: #fd9222;
+}
+.hero-link-circle {
+  display: block;
+  width: 38px;
+  height: 38px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 .hero-link-icon {
 }

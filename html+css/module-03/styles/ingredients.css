@@ -1,12 +1,19 @@
 .ingredients {
+  padding-top: 120px;
 }
 .ingredients-list {
 }
 .ingredients-item {
+  width: 260px;
+  padding: 28px 24px;
+  border: 1px solid;
+  border-radius: 15px;
 }
 .ingredients-ill {
+  margin-bottom: 36px;
 }
 .ingredients-name {
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.29;
   letter-spacing: -0.02em;

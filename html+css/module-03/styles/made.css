@@ -1,6 +1,19 @@
 .made {
 }
+.made-left-side {
+  width: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.made-right-side {
+  width: 516px;
+  padding: 32px;
+  border-radius: 15px;
+  background: #fff;
+}
 .made-caption {
+  width: 350px;
+  margin-bottom: 28px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;

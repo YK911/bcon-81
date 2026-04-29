@@ -3,14 +3,23 @@ body {
   font-size: 14px;
   color: #111111;
   background-color: #fafafa;
-
-  /*
-    font-weight: 400;
-    font-size: 16px;
-    font-style: normal;
-  */
 }
 /* Reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 a {
   color: currentColor;
   text-decoration: none;
@@ -23,12 +32,20 @@ button {
 address {
   font-style: normal;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 .btn {
+  padding: 14px 40px;
   font-weight: 600;
   line-height: 1.29;
   color: #fff;
   background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 100px;
 }
 .btn-primary {
   background-color: #fd9222;
@@ -39,15 +56,18 @@ address {
   background: rgba(253, 146, 34, 0.1);
 }
 .btn-secondary {
+  border-color: #fff;
 }
 .btn-secondary:hover,
 .btn-secondary:focus {
   color: #fd9222;
+  border-color: #fd9222;
 }
 .btn-dark {
   font-size: 18px;
   line-height: 1.33;
   color: #111;
+  border-color: #fd9222;
 }
 .btn-dark:hover,
 .btn-dark:focus {
@@ -69,16 +89,30 @@ address {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
+.section {
+  padding: 60px 0;
+}
 .section-title {
+  width: 412px;
+  margin: 0 auto 50px;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.17;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   text-align: center;
-  color: #111;
+
+  outline: 2px solid lightseagreen;
 }
 .accent-text {
   color: #fd9222;
+}
+
+/* Container settings */
+.container {
+  width: 1168px;
+  padding: 0 16px;
+  margin: 0 auto;
+
+  outline: 2px solid red;
 }
