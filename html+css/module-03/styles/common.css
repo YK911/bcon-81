@@ -102,7 +102,7 @@ img {
   text-transform: uppercase;
   text-align: center;
 
-  outline: 2px solid lightseagreen;
+  /* outline: 2px solid lightseagreen; */
 }
 .accent-text {
   color: #fd9222;
@@ -110,9 +110,10 @@ img {
 
 /* Container settings */
 .container {
+  /* max-width: 1168px; */
   width: 1168px;
   padding: 0 16px;
   margin: 0 auto;
 
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
 }

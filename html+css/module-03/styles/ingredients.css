@@ -2,12 +2,35 @@
   padding-top: 120px;
 }
 .ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 .ingredients-item {
-  width: 260px;
+  /* width: 260px; */
+  width: calc((100% - 32px * 3) / 4);
   padding: 28px 24px;
   border: 1px solid;
   border-radius: 15px;
+}
+/* 
+Формула для перебору
+2 * n
+a = 2
+b = 0
+*/
+.ingredients-item:nth-child(2n) {
+  border-color: #fd9222;
+}
+.ingredients-item:nth-child(4n + 1) {
+  border-color: #fd9222;
+  background-color: #fd9222;
+  color: #fff;
+}
+.ingredients-item:nth-child(4n + 3) {
+  background: #1e1823;
+  border-color: #1e1823;
+  color: #fff;
 }
 .ingredients-ill {
   margin-bottom: 36px;

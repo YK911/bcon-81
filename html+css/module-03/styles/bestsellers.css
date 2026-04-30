@@ -1,8 +1,21 @@
 .bestsellers {
 }
 .bestsellers-list {
+  display: flex;
+  gap: 16px;
 }
 .bestsellers-item {
+  width: 368px;
+}
+.bestsellers-item-top {
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+.bestsellers-item-bottom {
+  padding: 28px;
+  border-radius: 0 0 15px 15px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-top: none;
 }
 .bestsellers-ill {
 }

@@ -1,33 +1,50 @@
 .footer {
+  padding: 50px 0px;
   background: #1e1823;
 }
+.footer-top {
+  display: flex;
+
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 .footer-slogan {
+  width: 300px;
   font-weight: 500;
   font-size: 28px;
   line-height: 1.21;
   letter-spacing: -0.03em;
   color: #fff;
 }
+.footer-wrapper {
+  margin-left: auto;
+  margin-right: 90px;
+}
 .footer-caption {
+  margin-bottom: 14px;
   font-weight: 600;
   line-height: 1.29;
   letter-spacing: -0.02em;
-  text-align: center;
   color: #fff;
 }
 .socials {
 }
 .socials-item {
 }
-.socials-link {
+.footer .socials-link {
+  background-color: #fff;
 }
 .socials-icon {
 }
 .footer-contacts {
 }
 .footer-contacts-list {
+  /* display: flex;
+  flex-direction: column;
+  gap: 4px; */
 }
-.footer-contacts-item {
+.footer-contacts-item:not(:last-child) {
+  margin-bottom: 10px;
 }
 .footer-contacts-link {
   line-height: 1.29;
@@ -39,11 +56,19 @@
 .footer-contacts-link:focus {
   color: #fd9222;
 }
+.footer-bottom {
+  padding-top: 24px;
+}
 .footer-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 .footer-menu-item {
 }
 .footer-menu-link {
+  display: block;
+  padding: 11px 0;
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: -0.02em;

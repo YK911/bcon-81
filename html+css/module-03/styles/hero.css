@@ -15,7 +15,17 @@
   letter-spacing: -0.03em;
   color: #fff;
 }
+.hero-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 .hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: -0.02em;
@@ -26,7 +36,10 @@
   color: #fd9222;
 }
 .hero-link-circle {
-  display: block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
   width: 38px;
   height: 38px;
   background-color: #fff;

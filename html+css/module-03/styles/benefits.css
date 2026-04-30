@@ -3,6 +3,9 @@
   background: #1e1823;
 }
 .benefits-list {
+  display: flex;
+  justify-content: center;
+  gap: 88px;
 }
 .benefits-item {
   width: 308px;

@@ -1,14 +1,27 @@
 .reviews {
+  padding-bottom: 120px;
 }
-.section-title {
+.reviews .section-title {
+  margin-bottom: 90px;
 }
 .reviews-list {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 90px;
 }
 .reviews-item {
+  width: 360px;
+  padding: 56px 24px 24px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 16px;
+  background: #fff;
 }
 .reviews-avatar {
+  margin: -96px auto 16px;
 }
 .reviews-author {
+  margin-bottom: 24px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
@@ -19,4 +32,9 @@
   letter-spacing: -0.02em;
   text-align: center;
   color: rgba(17, 17, 17, 0.7);
+}
+
+.btn-dark {
+  display: block;
+  margin: 0 auto;
 }

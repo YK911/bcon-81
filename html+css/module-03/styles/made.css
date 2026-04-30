@@ -1,5 +1,9 @@
 .made {
 }
+.made-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 .made-left-side {
   width: 600px;
   border-radius: 16px;
