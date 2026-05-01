@@ -155,6 +155,14 @@ img {
 .nav-link:focus {
   color: #fd9222;
 }
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fd9222;
+}
 .socials {
   display: flex;
   align-items: center;
@@ -173,11 +181,22 @@ img {
   height: 100%;
 
   border-radius: 10px;
+}
+.socials-dark .socials-link {
+  color: #111;
   border: 1px solid rgba(17, 17, 17, 0.1);
+}
+.socials-light .socials-link {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .socials-link:hover,
 .socials-link:focus {
+  color: #fd9222;
   border-color: rgba(253, 146, 34, 0.1);
+}
+.socials-icon {
+  fill: currentColor;
 }
 
 /* Hero styles */
@@ -187,7 +206,13 @@ img {
 .hero-wrapper {
   border-radius: 30px;
   padding: 380px 40px 40px;
-  background: rgba(17, 17, 17, 0.4);
+  background-color: rgba(17, 17, 17, 0.4);
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.4)),
+    url("../images/hero/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .hero-title {
   width: 484px;
@@ -225,10 +250,38 @@ img {
 
   width: 38px;
   height: 38px;
-  background-color: #fff;
+  background-color: currentColor;
   border-radius: 50%;
 }
 .hero-link-icon {
+  fill: #fd9222;
+}
+.hero-link:hover .hero-link-icon,
+.hero-link:focus .hero-link-icon {
+  fill: #fff;
+}
+.banner {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: fit-content;
+  margin: 0 auto 80px;
+
+  font-size: 120px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: transparent;
+
+  background-image: url("../images/hero/banner-bg.jpg");
+  background-clip: text;
+  background-attachment: fixed;
+}
+.banner span:first-child {
+  margin-bottom: -42px;
 }
 
 /* Benefits styles */
@@ -242,7 +295,36 @@ img {
   gap: 88px;
 }
 .benefits-item {
+  position: relative;
   width: 308px;
+}
+.benefits-item:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  top: calc(50% - 62px);
+  right: -44px;
+  display: block;
+
+  width: 1px;
+  height: 124px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.benefits-decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 62px;
+  height: 62px;
+  margin-bottom: 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+.benefits-decor-icon {
+  width: 32px;
+  height: 32px;
 }
 .benefits-caption {
   margin-bottom: 18px;
@@ -286,6 +368,17 @@ img {
   border-color: #1e1823;
   color: #fff;
 }
+.ingredients-icon {
+  fill: none;
+}
+
+.ingredients-item:nth-child(2n) .ingredients-icon {
+  stroke: #fd9222;
+}
+.ingredients-item:nth-child(2n + 1) .ingredients-icon {
+  stroke: #fff;
+}
+
 .ingredients-ill {
   margin-bottom: 36px;
 }
@@ -325,8 +418,26 @@ img {
 .made-list {
 }
 .made-item {
+  display: flex;
+  gap: 8px;
+
   line-height: 1.29;
   letter-spacing: -0.02em;
+}
+.made-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.made-item::before {
+  content: "";
+  flex-shrink: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-top: 5px;
+
+  background-color: #4c4c4c;
+  border: 1px solid #eceded;
+  border-radius: 50%;
 }
 
 /* Products styles */
@@ -427,6 +538,7 @@ img {
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 16px;
   background: #fff;
+  box-shadow: 0 4px 10px 0 rgba(17, 17, 17, 0.1);
 }
 .reviews-avatar {
   margin: -96px auto 16px;
@@ -479,15 +591,6 @@ img {
   line-height: 1.29;
   letter-spacing: -0.02em;
   color: #fff;
-}
-.socials {
-}
-.socials-item {
-}
-.footer .socials-link {
-  background-color: #fff;
-}
-.socials-icon {
 }
 .footer-contacts {
 }
