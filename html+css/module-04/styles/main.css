@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* Common styles */
 body {
   font-family: "Montserrat", sans-serif;
@@ -47,6 +50,9 @@ img {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 100px;
+
+  transition: 300ms ease-in;
+  transition-property: background-color, color, border-color;
 }
 .btn-primary {
   background-color: #fd9222;
@@ -118,7 +124,11 @@ img {
 
 /* Header styles */
 .header {
+  /* position: sticky;
+  top: 0;
+  z-index: 1; */
   padding: 24px;
+  background-color: #fff;
 }
 .header .container {
   display: flex;
@@ -145,18 +155,26 @@ img {
 .nav-item {
 }
 .nav-link {
+  position: relative;
   display: block;
   padding: 11px 0;
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: -0.02em;
+
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
 }
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.active {
   color: #fd9222;
 }
-.nav-link::after {
+.nav-link.active::after {
   content: "";
+  position: absolute;
+  bottom: 0;
   display: block;
   width: 100%;
   height: 4px;
@@ -181,6 +199,10 @@ img {
   height: 100%;
 
   border-radius: 10px;
+
+  transition-property: color, border-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
 }
 .socials-dark .socials-link {
   color: #111;
@@ -238,6 +260,10 @@ img {
   line-height: 1.29;
   letter-spacing: -0.02em;
   color: #fff;
+
+  transition:
+    color,
+    300ms ease-in;
 }
 .hero-link:hover,
 .hero-link:focus {
@@ -255,6 +281,10 @@ img {
 }
 .hero-link-icon {
   fill: #fd9222;
+
+  transition-property: fill;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
 }
 .hero-link:hover .hero-link-icon,
 .hero-link:focus .hero-link-icon {
@@ -302,7 +332,7 @@ img {
   content: "";
 
   position: absolute;
-  top: calc(50% - 62px);
+  top: calc(50% - 124px / 2);
   right: -44px;
   display: block;
 
@@ -349,7 +379,7 @@ img {
   gap: 32px;
 }
 .ingredients-item {
-  /* width: 260px; */
+  position: relative;
   width: calc((100% - 32px * 3) / 4);
   padding: 28px 24px;
   border: 1px solid;
@@ -369,6 +399,9 @@ img {
   color: #fff;
 }
 .ingredients-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
   fill: none;
 }
 
@@ -500,8 +533,43 @@ img {
   width: 368px;
 }
 .bestsellers-item-top {
-  border-radius: 16px 16px 0 0;
+  position: relative;
   overflow: hidden;
+}
+.bestsellers-ill {
+  border-radius: 16px 16px 0 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translateY(100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+
+  border-radius: 16px 16px 0 0;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    161deg,
+    rgba(253, 253, 255, 0.1) 0%,
+    rgba(8, 2, 21, 0.1) 100%
+  );
+
+  transition: transform 400ms ease-out;
+}
+
+.bestsellers-item:hover .overlay {
+  transform: translateY(0);
 }
 .bestsellers-item-bottom {
   padding: 28px;
@@ -509,8 +577,7 @@ img {
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-top: none;
 }
-.bestsellers-ill {
-}
+
 .bestsellers-descr {
   font-weight: 600;
   font-size: 18px;
@@ -533,6 +600,7 @@ img {
   margin-bottom: 90px;
 }
 .reviews-item {
+  position: relative;
   width: 360px;
   padding: 56px 24px 24px;
   border: 1px solid rgba(17, 17, 17, 0.1);
@@ -541,7 +609,9 @@ img {
   box-shadow: 0 4px 10px 0 rgba(17, 17, 17, 0.1);
 }
 .reviews-avatar {
-  margin: -96px auto 16px;
+  position: absolute;
+  top: -44px;
+  left: calc(50% - 80px / 2);
 }
 .reviews-author {
   margin-bottom: 24px;
@@ -604,6 +674,10 @@ img {
   letter-spacing: -0.02em;
   text-align: center;
   color: #fff;
+
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
 }
 .footer-contacts-link:hover,
 .footer-contacts-link:focus {
@@ -626,8 +700,65 @@ img {
   line-height: 1.29;
   letter-spacing: -0.02em;
   color: #fff;
+
+  transition: color 300ms ease-in;
 }
 .footer-menu-link:hover,
 .footer-menu-link:focus {
   color: #fd9222;
+}
+
+/* Modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(23, 23, 23, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  width: 518px;
+  min-height: 300px;
+  background: #fafafa;
+  border-radius: 15px;
+}
+.modal-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.modal-btn-icon {
+}
+
+/* Scroll to top button  */
+.scroll-top {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+}
+.scroll-top-icon {
+  fill: none;
+  stroke: #fd9222;
+  transform: rotate(-90deg);
 }
