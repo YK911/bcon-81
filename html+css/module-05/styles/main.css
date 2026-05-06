@@ -794,6 +794,8 @@ img {
   position: relative;
 }
 .modal-form-input {
+  --state-color: rgba(17, 17, 17, 0.1);
+
   width: 100%;
   height: 68px;
   padding: 22px 62px;
@@ -804,20 +806,20 @@ img {
   color: #404040;
 
   outline: none;
-  border: 1px solid rgba(17, 17, 17, 0.1);
+  border: 1px solid var(--state-color);
   border-radius: 12px;
 
   transition: border-color 300ms ease-in;
 }
 .modal-form-input:focus {
-  border-color: #fd9222;
+  --state-color: #fd9222;
 }
 .modal-form-icon {
   position: absolute;
   top: 50%;
   left: 24px;
   transform: translateY(-50%);
-  stroke: #404040;
+  stroke: #111;
   transition: stroke 300ms ease-in;
   pointer-events: none;
 }
@@ -851,6 +853,8 @@ img {
   margin-bottom: 40px;
 }
 .modal-form-content {
+  display: flex;
+  align-items: center;
   line-height: 1.29;
   letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.7);

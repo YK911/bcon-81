@@ -26,3 +26,11 @@ formCaption.classList.add("modal-caption");
 // line-height: 1.17;
 // letter-spacing: -0.03em;
 // text-transform: uppercase;
+
+// Symbol counter
+const symbolCounterElem = document.querySelector(".js-counter");
+const commentElem = document.querySelector(".js-comment");
+
+commentElem.oninput = () => {
+  symbolCounterElem.textContent = commentElem.value.length;
+};

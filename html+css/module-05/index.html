@@ -27,6 +27,7 @@
     />
     <!-- Custom styles -->
     <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/validation.css" />
   </head>
 
   <body>
@@ -675,10 +676,22 @@
                 type="text"
                 name="userName"
                 id="userName"
+                required
+                minlength="2"
+                maxlength="20"
+                pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
+                title="Username must be two words separated by space"
+                placeholder=" "
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#person"></use>
               </svg>
+              <svg class="modal-error-icon" width="24" height="24">
+                <use href="./images/icons.svg#error"></use>
+              </svg>
+              <span class="error-text">
+                Username must be two words separated by space
+              </span>
             </div>
           </div>
 
@@ -690,10 +703,18 @@
                 type="email"
                 name="userEmail"
                 id="userEmail"
+                required
+                placeholder=" "
               />
               <svg class="modal-form-icon" width="24" height="24">
                 <use href="./images/icons.svg#email"></use>
               </svg>
+              <svg class="modal-error-icon" width="24" height="24">
+                <use href="./images/icons.svg#error"></use>
+              </svg>
+              <span class="error-text">
+                Please, user @ symbol and domain name
+              </span>
             </div>
           </div>
 
@@ -714,12 +735,21 @@
 
           <div class="modal-form-field">
             <label class="modal-form-label" for="userComment">Comment</label>
-            <textarea
-              class="modal-form-comment"
-              name="userComment"
-              id="userComment"
-              placeholder="Enter text"
-            ></textarea>
+            <div class="modal-form-wrapper">
+              <textarea
+                class="modal-form-comment js-comment"
+                name="userComment"
+                id="userComment"
+                placeholder="Enter text"
+                required
+                minlength="20"
+                maxlength="2000"
+              ></textarea>
+              <span class="error-text"> Minimun symbols count - 20 chars </span>
+              <p class="symbol-counter">
+                <span class="js-counter">0</span> / 2000
+              </p>
+            </div>
           </div>
 
           <div class="modal-form-agreement">
@@ -737,6 +767,11 @@
                   <use href="./images/icons.svg#check"></use>
                 </svg>
               </span>
+              <!-- <input
+                class="custom-checkbox"
+                type="checkbox"
+                name="userAgreement"
+              /> -->
               I accept the terms and conditions of the
               <a
                 class="modal-form-link"
