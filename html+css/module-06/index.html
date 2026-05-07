@@ -26,8 +26,8 @@
       href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
     />
     <!-- Custom styles -->
+    <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="./styles/validation.css" />
   </head>
 
   <body>
@@ -36,10 +36,16 @@
       <div class="container header-container">
         <a class="logo" href="./index.html">
           <i>SIMPLY</i> CHOCOLATE
-          <svg class="logo-icon" width="24" height="24">
+          <svg class="logo-icon" width="21" height="21">
             <use href="./images/icons.svg#logo"></use>
           </svg>
         </a>
+
+        <button class="mobile-menu-btn" aria-label="Open menu button">
+          <svg class="mobile-menu-btn-icon" width="28" height="28">
+            <use href="./images/icons.svg#burger-menu"></use>
+          </svg>
+        </button>
 
         <nav class="nav">
           <ul class="nav-list">
@@ -95,9 +101,10 @@
         </ul>
       </div>
     </header>
+
     <main>
       <!-- Hero section -->
-      <section class="hero" id="hero">
+      <section class="hero hide" id="hero">
         <div class="container">
           <div class="hero-wrapper">
             <h1 class="hero-title">
@@ -176,7 +183,7 @@
       </section>
 
       <!-- Ingredients section -->
-      <section class="ingredients section" id="ingredients">
+      <section class="ingredients section hide" id="ingredients">
         <div class="container">
           <h2 class="section-title">
             It all adds up to one exceptional
@@ -279,7 +286,7 @@
       </section>
 
       <!-- Made section -->
-      <section class="made section" id="made">
+      <section class="made section hide" id="made">
         <div class="container">
           <h2 class="section-title">
             How it&#39;s <span class="accent-text">made</span>?
@@ -433,7 +440,7 @@
       </section>
 
       <!-- Bestsellers section -->
-      <section class="bestsellers section" id="bestsellers">
+      <section class="bestsellers section hide" id="bestsellers">
         <div class="container">
           <h2 class="section-title">
             <span class="accent-text">Top</span> sellers
@@ -504,7 +511,7 @@
       </section>
 
       <!-- Reviews section -->
-      <section class="reviews section" id="reviews">
+      <section class="reviews section hide" id="reviews">
         <div class="container">
           <h2 class="section-title">
             <span class="accent-text">Chocolate</span> is loved
@@ -564,7 +571,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer" id="footer">
+    <footer class="footer hide" id="footer">
       <div class="container">
         <div class="footer-top">
           <p class="footer-slogan">
@@ -654,7 +661,7 @@
     </footer>
 
     <!-- Modal window -->
-    <div class="backdrop is-open">
+    <div class="backdrop">
       <div class="modal">
         <button class="modal-btn" type="button" aria-label="Close modal button">
           <svg class="modal-btn-icon" width="28" height="28">
@@ -782,6 +789,66 @@
           <button class="btn btn-primary" type="submit">Send</button>
         </form>
       </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu is-open">
+      <button class="mobile-menu-btn" aria-label="Close menu button">
+        <svg class="mobile-menu-btn-icon" width="24" height="24">
+          <use href="./images/icons.svg#close"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu-list">
+        <li class="mobile-menu-item">
+          <a href="#" class="mobile-menu-link active">Home</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="#" class="mobile-menu-link">How it’s made?</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a href="#" class="mobile-menu-link">Chocolate is loved</a>
+        </li>
+      </ul>
+
+      <ul class="socials socials-light">
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-item">
+          <a
+            class="socials-link"
+            href="https://x.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="socials-icon" width="24" height="24">
+              <use href="./images/icons.svg#twitter"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </body>
 </html>

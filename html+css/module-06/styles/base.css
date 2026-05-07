@@ -1,0 +1,46 @@
+html {
+  scroll-behavior: smooth;
+}
+/* Common styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #111111;
+  background-color: #fafafa;
+}
+body:has(.mobile-menu.is-open) {
+  overflow-y: hidden;
+}
+/* Reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+button {
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+}
+address {
+  font-style: normal;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
