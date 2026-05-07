@@ -1,0 +1,47 @@
+.modal-form-input:user-invalid,
+.modal-form-comment:required:user-invalid {
+  border-color: #e74a3b;
+}
+
+.modal-form-input:user-invalid + .modal-form-icon {
+  stroke: #e74a3b;
+}
+
+.modal-error-icon {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  opacity: 0;
+  transition: 150ms ease;
+}
+.modal-form-input:user-invalid ~ .modal-error-icon,
+.modal-form-input:user-invalid ~ .error-text,
+.modal-form-comment:user-invalid ~ .error-text {
+  opacity: 1;
+}
+
+.error-text {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(110%);
+
+  width: 100%;
+  font-size: 12px;
+  color: #e74a3b;
+  text-align: center;
+
+  opacity: 0;
+  transition: 150ms ease;
+}
+
+.symbol-counter {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+
+  font-size: 10px;
+}
