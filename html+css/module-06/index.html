@@ -10,24 +10,130 @@
 
     <link
       rel="shortcut icon"
-      href="./images/icons/logo.svg"
+      href="./images/favicon.svg"
       type="image/svg+xml"
     />
-    <!-- Set fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- =============
+    |  Попереднє завантаження необхідних файлів
+    |  без очікування черги 
+    ============= -->
     <link
+      rel="preload"
+      href="./images/hero/hero-bg_mob@2x.avif"
+      as="image"
+      type="image/avif"
+    />
+
+    <!-- Set fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
-    />
+    /> -->
     <!-- Set Normalize -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
     />
     <!-- Custom styles -->
-    <link rel="stylesheet" href="./styles/base.css" />
+    <!-- <link rel="stylesheet" href="./styles/base.css" /> -->
     <link rel="stylesheet" href="./styles/main.css" />
+
+    <!-- <link rel="preload" href="./images/hero/hero-bg_mob@1x.avif" as="image" /> -->
+
+    <!-- =============
+    |  Прийом Critical CSS
+    |  Дозволяє встановити стилі для 
+    | першого екрану під час завантаження сторінки
+    ============= -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Common styles */
+      body {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        color: #111111;
+        background-color: #fafafa;
+      }
+      body:has(.mobile-menu.is-open) {
+        overflow-y: hidden;
+      }
+      /* Reset */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+      ol,
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      a {
+        color: currentColor;
+        text-decoration: none;
+      }
+      button {
+        font-family: inherit;
+        color: currentColor;
+        cursor: pointer;
+      }
+      address {
+        font-style: normal;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .hero-wrapper {
+        position: relative;
+        overflow: hidden;
+        padding: 390px 20px 20px;
+        border-radius: 30px;
+        background-color: rgba(17, 17, 17, 0.4);
+        /* background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        background-image:
+          linear-gradient(rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.4)),
+          image-set(url("./images/hero/hero-bg_mob@1x.jpg") type("image/jpg"));
+
+        background-image:
+          linear-gradient(rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.4)),
+          image-set(url("./images/hero/hero-bg_mob@1x.avif") type("image/avif"));
+      }
+      @media (min-resolution: 192dpi) {
+        .hero-wrapper {
+          background-image:
+            linear-gradient(rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.4)),
+            image-set(url("./images/hero/hero-bg_mob@2x.jpg") type("image/jpg"));
+          background-image:
+            linear-gradient(rgba(17, 17, 17, 0.4), rgba(17, 17, 17, 0.4)),
+            image-set(
+              url("./images/hero/hero-bg_mob@2x.avif") type("image/avif")
+            );
+        } */
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        object-fit: cover;
+        object-position: center;
+      }
+    </style>
   </head>
 
   <body>
@@ -104,9 +210,18 @@
 
     <main>
       <!-- Hero section -->
-      <section class="hero hide" id="hero">
+      <section class="hero" id="hero">
         <div class="container">
           <div class="hero-wrapper">
+            <img
+              class="hero-bg"
+              srcset="
+                ./images/hero/hero-bg_mob@1x.avif 1x,
+                ./images/hero/hero-bg_mob@2x.avif 2x
+              "
+              src="./images/hero/hero-bg_mob@1x.avif"
+              alt="Bg image"
+            />
             <h1 class="hero-title">
               Treat yourself or a loved one to our finest ingredients for a
               moment of pure delight!
@@ -183,7 +298,7 @@
       </section>
 
       <!-- Ingredients section -->
-      <section class="ingredients section hide" id="ingredients">
+      <section class="ingredients section" id="ingredients">
         <div class="container">
           <h2 class="section-title">
             It all adds up to one exceptional
@@ -194,13 +309,27 @@
               <svg class="ingredients-icon" width="24" height="24">
                 <use href="./images/icons.svg#arrow"></use>
               </svg>
-              <img
-                class="ingredients-ill"
-                src="./images/ingredients/img-1.png"
-                alt="MILK CHOCOLATE"
-                width="212"
-                height="160"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/ingredients/img-1@1x.avif 1x,
+                    ./images/ingredients/img-1@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <img
+                  class="ingredients-ill"
+                  srcset="
+                    ./images/ingredients/img-1@1x.png 1x,
+                    ./images/ingredients/img-1@2x.png 2x
+                  "
+                  src="./images/ingredients/img-1@1x.png"
+                  alt="MILK CHOCOLATE"
+                  width="236"
+                  height="178"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="ingredients-name">MILK CHOCOLATE</h3>
             </li>
             <li class="ingredients-item">
@@ -209,10 +338,15 @@
               </svg>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-2.png"
+                srcset="
+                  ./images/ingredients/img-2@1x.png 1x,
+                  ./images/ingredients/img-2@2x.png 2x
+                "
+                src="./images/ingredients/img-2@1x.png"
                 alt="MILK"
-                width="212"
-                height="160"
+                width="236"
+                height="178"
+                loading="lazy"
               />
               <h3 class="ingredients-name">MILK</h3>
             </li>
@@ -222,10 +356,15 @@
               </svg>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-3.png"
+                srcset="
+                  ./images/ingredients/img-3@1x.png 1x,
+                  ./images/ingredients/img-3@2x.png 2x
+                "
+                src="./images/ingredients/img-3@1x.png"
                 alt="NUTS"
-                width="212"
-                height="160"
+                width="236"
+                height="178"
+                loading="lazy"
               />
               <h3 class="ingredients-name">NUTS</h3>
             </li>
@@ -235,10 +374,15 @@
               </svg>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-4.png"
+                srcset="
+                  ./images/ingredients/img-4@1x.png 1x,
+                  ./images/ingredients/img-4@2x.png 2x
+                "
+                src="./images/ingredients/img-4@1x.png"
                 alt="SEMI-SWEET CHOCOLATE"
-                width="212"
-                height="160"
+                width="236"
+                height="178"
+                loading="lazy"
               />
               <h3 class="ingredients-name">SEMI-SWEET CHOCOLATE</h3>
             </li>
@@ -248,10 +392,15 @@
               </svg>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-5.png"
+                srcset="
+                  ./images/ingredients/img-5@1x.png 1x,
+                  ./images/ingredients/img-5@2x.png 2x
+                "
+                src="./images/ingredients/img-5@1x.png"
                 alt="CACAO"
-                width="212"
-                height="160"
+                width="236"
+                height="178"
+                loading="lazy"
               />
               <h3 class="ingredients-name">CACAO</h3>
             </li>
@@ -261,10 +410,15 @@
               </svg>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-6.png"
+                srcset="
+                  ./images/ingredients/img-6@1x.png 1x,
+                  ./images/ingredients/img-6@2x.png 2x
+                "
+                src="./images/ingredients/img-6@1x.png"
                 alt="RASPBERRY"
-                width="212"
-                height="160"
+                width="236"
+                height="178"
+                loading="lazy"
               />
               <h3 class="ingredients-name">RASPBERRY</h3>
             </li>
@@ -274,10 +428,15 @@
               </svg>
               <img
                 class="ingredients-ill"
-                src="./images/ingredients/img-7.png"
+                srcset="
+                  ./images/ingredients/img-7@1x.png 1x,
+                  ./images/ingredients/img-7@2x.png 2x
+                "
+                src="./images/ingredients/img-7@1x.png"
                 alt="COCONUT OIL"
-                width="212"
-                height="160"
+                width="236"
+                height="178"
+                loading="lazy"
               />
               <h3 class="ingredients-name">COCONUT OIL</h3>
             </li>
@@ -299,6 +458,7 @@
                 alt=""
                 width="600"
                 height="400"
+                loading="lazy"
               />
             </div>
             <div class="made-right-side">
@@ -340,97 +500,233 @@
           </h2>
           <ul class="products-list">
             <li class="products-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-1.jpg"
-                alt="Orange - Dark chocolate"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-1.avif    1x,
+                    ./images/products/img-1@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-1.jpg    1x,
+                    ./images/products/img-1@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-1.jpg"
+                  alt="Orange - Dark chocolate"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Orange</h3>
               <p class="products-type">Dark chocolate</p>
               <p class="products-price">45 UAH</p>
             </li>
             <li class="products-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-2.jpg"
-                alt="Apple & Cranberry - Milk chocolate"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-2.avif    1x,
+                    ./images/products/img-2@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-2.jpg    1x,
+                    ./images/products/img-2@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-2.jpg"
+                  alt="Apple & Cranberry - Milk chocolate"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Apple & Cranberry</h3>
               <p class="products-type">Milk chocolate</p>
               <p class="products-price">50 UAH</p>
             </li>
             <li class="products-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-3.jpg"
-                alt="Lime & Sea Salt - Dark chocolate"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-3.avif    1x,
+                    ./images/products/img-3@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-3.jpg    1x,
+                    ./images/products/img-3@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-3.jpg"
+                  alt="Lime & Sea Salt - Dark chocolate"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Lime & Sea Salt</h3>
               <p class="products-type">Dark chocolate</p>
               <p class="products-price">66 UAH</p>
             </li>
             <li class="products-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-4.jpg"
-                alt="Pineapple - Dark chocolate"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-4.avif    1x,
+                    ./images/products/img-4@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-4.jpg    1x,
+                    ./images/products/img-4@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-4.jpg"
+                  alt="Pineapple - Dark chocolate"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Pineapple</h3>
               <p class="products-type">Dark chocolate</p>
               <p class="products-price">54 UAH</p>
             </li>
             <li class="products-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-5.jpg"
-                alt="Classic - Milk chocolate"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-5.avif    1x,
+                    ./images/products/img-5@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-5.jpg    1x,
+                    ./images/products/img-5@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-5.jpg"
+                  alt="Classic - Milk chocolate"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Classic</h3>
               <p class="products-type">Milk chocolate</p>
               <p class="products-price">45 UAH</p>
             </li>
             <li class="products-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-6.jpg"
-                alt="Honey - Milk chocolate"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-6.avif    1x,
+                    ./images/products/img-6@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-6.jpg    1x,
+                    ./images/products/img-6@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-6.jpg"
+                  alt="Honey - Milk chocolate"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Honey</h3>
               <p class="products-type">Milk chocolate</p>
               <p class="products-price">50 UAH</p>
             </li>
             <li class="products-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-7.jpg"
-                alt="Roasted Fruits - Dark chocolate"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-7.avif    1x,
+                    ./images/products/img-7@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-7.jpg    1x,
+                    ./images/products/img-7@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-7.jpg"
+                  alt="Roasted Fruits - Dark chocolate"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Roasted Fruits</h3>
               <p class="products-type">Dark chocolate</p>
               <p class="products-price">66 UAH</p>
             </li>
             <li class="products-item">
-              <img
-                class="products-ill"
-                src="./images/products/img-8.jpg"
-                alt="Classic - White chocolate"
-                width="230"
-                height="201"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/products/img-8.avif    1x,
+                    ./images/products/img-8@2x.avif 2x
+                  "
+                  type="image/avif"
+                />
+                <source
+                  srcset="
+                    ./images/products/img-8.jpg    1x,
+                    ./images/products/img-8@2x.jpg 2x
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  class="products-ill"
+                  src="./images/products/img-8.jpg"
+                  alt="Classic - White chocolate"
+                  width="230"
+                  height="201"
+                  loading="lazy"
+                />
+              </picture>
               <h3 class="products-name">Classic</h3>
               <p class="products-type">White chocolate</p>
               <p class="products-price">54 UAH</p>
@@ -454,6 +750,7 @@
                   alt="CHOCOLATE WITH NUTS"
                   width="368"
                   height="464"
+                  loading="lazy"
                 />
                 <p class="overlay">
                   Chocolate with fruit is an unbeatable combination of two of
@@ -474,6 +771,7 @@
                   alt="CHOCOLATE WITH FRUITS"
                   width="368"
                   height="464"
+                  loading="lazy"
                 />
                 <p class="overlay">
                   Chocolate with fruit is an unbeatable combination of two of
@@ -494,6 +792,7 @@
                   alt="DARK CHOCOLATE"
                   width="368"
                   height="464"
+                  loading="lazy"
                 />
                 <p class="overlay">
                   Chocolate with fruit is an unbeatable combination of two of
@@ -524,6 +823,7 @@
                 alt="Victoria Dobrzhanska"
                 width="80"
                 height="80"
+                loading="lazy"
               />
               <h3 class="reviews-author">Victoria Dobrzhanska</h3>
               <p class="reviews-text">
@@ -538,6 +838,7 @@
                 alt="Nazar Babenko"
                 width="80"
                 height="80"
+                loading="lazy"
               />
               <h3 class="reviews-author">Nazar Babenko</h3>
               <p class="reviews-text">
@@ -553,6 +854,7 @@
                 alt="Olena Kampusch"
                 width="80"
                 height="80"
+                loading="lazy"
               />
               <h3 class="reviews-author">Olena Kampusch</h3>
               <p class="reviews-text">
@@ -571,7 +873,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer hide" id="footer">
+    <footer class="footer" id="footer">
       <div class="container">
         <div class="footer-top">
           <p class="footer-slogan">
@@ -652,9 +954,16 @@
             </li>
           </ul>
 
-          <form name="subscribeForm">
-            <input type="text" placeholder="subscribe" />
-            <button type="submit">Send</button>
+          <form class="footer-form" name="subscribeForm">
+            <label class="footer-form-field">
+              <input
+                class="footer-form-input"
+                type="email"
+                placeholder="Enter your email"
+              />
+              <span class="footer-form-label">Email</span>
+            </label>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
           </form>
         </div>
       </div>
@@ -792,7 +1101,7 @@
     </div>
 
     <!-- Mobile menu -->
-    <div class="mobile-menu is-open">
+    <div class="mobile-menu">
       <button class="mobile-menu-btn" aria-label="Close menu button">
         <svg class="mobile-menu-btn-icon" width="24" height="24">
           <use href="./images/icons.svg#close"></use>
