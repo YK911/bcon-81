@@ -5,6 +5,17 @@
  * - Неявне перетворення типів
  */
 
+const price = 10;
+const userOrder = uservalue.value;
+const outputElement = output;
+console.log("🚀 ~ userOrder:", userOrder);
+
+const isNumber = !Number.isNaN(Number(userOrder));
+
+if (isNumber) {
+  outputElement.textContent = userOrder * price;
+}
+
 // console.log(Number("5")); // 5
 // console.log(Number(true)); // 1
 // console.log(Number(false)); // 0
@@ -12,6 +23,7 @@
 // console.log(Number(undefined)); // NaN
 // console.log(Number("Jacob")); // NaN
 // console.log(Number("25px")); // NaN
+
 // console.log("5" * 2); // 10
 // console.log("10" - 5); // 5
 // console.log(5 + true); // 6
