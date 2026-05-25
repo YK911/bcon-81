@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Branching</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: fit-content;
+        margin: 0 auto;
+      }
+      .input {
+        max-width: 300px;
+        width: 100%;
+        height: 36px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: 1px solid #111;
+        outline: transparent;
+      }
+      .input.valid {
+        border-color: lightgreen;
+      }
+      .input.invalid {
+        border-color: red;
+      }
+      .error-text {
+        display: block;
+        font-size: 12px;
+        text-align: center;
+        color: tomato;
+        opacity: 0;
+        transition: 300ms ease;
+      }
+      .error-text.show {
+        opacity: 1;
+        transition-delay: 500ms;
+      }
+
+      .notification {
+        max-width: 400px;
+        padding: 20px;
+        border: 1px solid lightskyblue;
+        border-radius: 20px;
+      }
+      .notification h3 {
+        margin-top: 0;
+        text-align: center;
+      }
+      .notification p {
+        padding: 8px;
+        margin: 0 auto;
+        width: fit-content;
+        text-align: center;
+        background-color: darkslateblue;
+        color: white;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <label class="field">
+      <input class="input" type="text" id="username" value="John Week" />
+      <span class="error-text" id="error">
+        Username must include minimun 8 char
+      </span>
+    </label>
+
+    <select id="deadlineOption">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3+</option>
+    </select>
+
+    <div class="notification">
+      <h3>Deadline output</h3>
+
+      <p id="deadlineText"></p>
+    </div>
+
+    <!-- <script type="module" src="./js/01-branching.js"></script> -->
+    <!-- <script type="module" src="./js/02-scope.js"></script> -->
+    <!-- <script type="module" src="./js/03-tasks.js"></script> -->
+    <!-- <script type="module" src="./js/04-switch.js"></script> -->
+    <!-- <script type="module" src="./js/05-operators.js"></script> -->
+    <!-- <script type="module" src="./js/06-tasks.js"></script> -->
+  </body>
+</html>
