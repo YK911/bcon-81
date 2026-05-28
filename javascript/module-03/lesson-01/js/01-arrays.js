@@ -10,16 +10,20 @@
 
 const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
 console.table(courses);
-console.log([0]);
-console.log([1]);
-console.log([2]);
-console.log([3]);
+console.log(courses.length - 1);
+
+const firstElement = courses[0];
+
+const lastElementIndex = courses.length - 1;
+const lastElement = courses[lastElementIndex];
+
+console.log("🚀 ~ firstElement:", firstElement);
+console.log("🚀 ~ lasrElement:", lastElement);
 
 courses[1] = "Jacob";
 courses[3] = "Adrian";
+// courses[33] = "Earth";
 console.table(courses);
 
-console.log(courses.length);
-
-const lastIndex = courses.length - 1;
-console.log(lastIndex);
+courses.length = 0;
+console.log("🚀 ~ courses:", courses);
