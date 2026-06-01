@@ -12,19 +12,42 @@ const feedback = {
   bad: 3,
 };
 
-let totalFeedback = 0;
+// for (const key in feedback) {
+//   console.log("🚀 ~ key:", key);
+//   console.log("🚀 ~ value:", feedback[key]);
+// }
 
+// console.log("🚀 ~ good in feedback:", "good" in feedback);
+
+let totalFeedback = 0;
+// for (const key in feedback) {
+//   console.log("🚀 ~ value:", feedback[key]);
+//   totalFeedback += feedback[key];
+// }
 // console.log("totalFeedback: ", totalFeedback);
 
 /**
  * ---------------------------------
  */
-const keys = feedback;
+const keys = Object.keys(feedback);
 console.log("🚀 ~ keys:", keys);
+
+// for (const key of keys) {
+//   console.log(key);
+//   console.log(feedback[key]);
+//   totalFeedback += feedback[key];
+// }
 
 // console.log("totalFeedback: ", totalFeedback);
 
-const values = feedback;
+const values = Object.values(feedback);
 console.log("🚀 ~ values:", values);
 
-// console.log('totalFeedback: ', totalFeedback);
+for (const value of values) {
+  totalFeedback += value;
+}
+
+// console.log("totalFeedback: ", totalFeedback);
+
+const entries = Object.entries(feedback);
+// console.log("🚀 ~ entries:", entries);
