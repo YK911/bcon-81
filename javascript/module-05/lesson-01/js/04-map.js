@@ -1,4 +1,4 @@
-/**
+/*
  * Array.prototype.map()
  * - Поелементо перебирає оригінальний масив
  * - Не змінює оригінальний масив
@@ -17,21 +17,31 @@ const allCars = [
   { make: "Ford", model: "Fusion", amount: 13, price: 22120 },
   { make: "Ford", model: "Explorer", amount: 6, price: 31660 },
 ];
-
-/**
+// console.table(allCars);
+/*
  * Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
  */
 
-const getModels = cars => {};
+const getModels = cars => {
+  return cars.map((car, idx, cars) => {
+    return car.model;
+  });
+};
+// const getModels = cars => cars.map(car => car.model);
 
+// getModels(allCars);
 // console.table(getModels(allCars));
 
-/**
+/*
  * Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінним
  * значенням властивості price залежно від переданої знижки.
  */
 
-const makeCarsWithDiscount = (cars, discount) => {};
+const makeCarsWithDiscount = (cars, discount) => {
+  return cars.map(car => {
+    return { ...car, price: car.price * (1 - discount) };
+  });
+};
 
 // console.table(makeCarsWithDiscount(allCars, 0.2));
 // console.table(makeCarsWithDiscount(allCars, 0.4));
@@ -43,7 +53,7 @@ const players = [
   { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
   { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true },
 ];
-// console.table(players);
+console.table(players);
 
 /*
  * Збільшуємо кількість годин гравця за id
@@ -51,6 +61,21 @@ const players = [
 
 const playerIdToUpdate = "player-3";
 
-const updatedPlayers = players.map(player => {});
+const updatePlayersInfo = (players, id) => {
+  return players.map(player => {
+    if (id === player.id) {
+      return {
+        ...player,
+        timePlayed: player.timePlayed + 70,
+      };
+    }
 
-// console.log(updatedPlayers);
+    return { ...player };
+    // return player;
+  }); // [ {}, {}, {} ...]
+};
+
+const updatedPlayers = updatePlayersInfo(players, playerIdToUpdate);
+// console.table(updatedPlayers);
+
+// console.log(updatedPlayers[0] === players[0]);
