@@ -1,4 +1,4 @@
-/**
+/*
  * Метод filter
  *
  * - Поелементно перебирає оригінальний массив
@@ -10,7 +10,10 @@
 
 const numbers = [5, 10, 15, 20, 25];
 
-const filteredNumbers = numbers;
+const filteredNumbers = numbers.filter((item, idx, arr) => {
+  return item !== 15;
+});
+// const filteredNumbers = numbers.filter(item => item !== 15);
 // console.log(filteredNumbers);
 
 /**
@@ -99,31 +102,62 @@ const allCars = [
   },
 ];
 
-/**
+console.table(allCars);
+
+const createCarMarkup = (car, idx) => {
+  return `<tr>
+    <td>${idx + 1}</td>
+    <td>${car.make}</td>
+    <td>${car.model}</td>
+    <td>${car.price}</td>
+  </tr>`;
+};
+
+const renderMarkup = cars => {
+  const markup = cars.map(createCarMarkup).join("");
+  tableCars.children[1].innerHTML = markup;
+};
+
+// renderMarkup(allCars);
+
+/*
  * Нехай функція filterByPrice повертає масив автомобілів ціна яких менша ніж
  * значення параметра threshold.
  */
 
-const filterByPrice = (cars, threshold) => {};
+const filterByPrice = (cars, threshold) => {
+  return cars.filter((car, idx, arr) => {
+    return car.price < threshold;
+  });
+};
 
 // console.table(filterByPrice(allCars, 30000));
 // console.table(filterByPrice(allCars, 25000));
 
-/**
+/*
  * Нехай функція getCarsWithDiscount повертає масив автомобілів
  * властивість onSale яких true.
  */
 
-const getCarsWithDiscount = cars => {};
+const getCarsWithDiscount = cars => {
+  return cars.filter(car => {
+    return car.onSale;
+  });
+};
 
 // console.table(getCarsWithDiscount(allCars));
 
-/**
+/*
  * Нехай функція getCarsWithType повертає масив автомобілів тип яких збігається
  * зі значенням параметра type.
  */
 
-const getCarsWithType = (cars, type) => {};
+const getCarsWithType = (cars, type) => {
+  return cars.filter(car => {
+    return car.type === type;
+  });
+};
 
 // console.table(getCarsWithType(allCars, "suv"));
 // console.table(getCarsWithType(allCars, "sedan"));
+// console.log(getCarsWithType(allCars, "tank"));

@@ -3,16 +3,20 @@
  */
 const numbers = [1, 5, 2, 4, 3];
 
-const greaterThenTwo = numbers;
+const greaterThenTwo = numbers.filter(num => num > 2);
 // console.log(greaterThenTwo);
 
-const multByThree = greaterThenTwo;
+const multByThree = greaterThenTwo.map(num => num * 3);
 // console.log(multByThree);
 
-const sorted = multByThree;
+const sorted = multByThree.toSorted((curr, prev) => curr - prev);
 // console.log(sorted);
 
-const sortedbyChaining = numbers;
+const sortedbyChaining = numbers
+  .filter(num => num > 2)
+  .map(num => num * 3)
+  .toSorted((curr, prev) => curr - prev);
+
 // console.log(sortedbyChaining);
 
 /**
@@ -100,19 +104,39 @@ const allCars = [
     onSale: false,
   },
 ];
-
-/**
+console.table(allCars);
+/*
  * Нехай функція getAvailableCarNames повертає масив моделей автомобілів,
  * але тільки тих, які зараз на розпродажі.
  */
-const getModelsOnSale = cars => {};
+const getModelsOnSale = cars => {
+  return cars
+    .filter(car => {
+      return car.onSale;
+    })
+    .map(car => {
+      return car.model;
+    });
+};
 
 // console.table(getModelsOnSale(allCars));
 
-/**
+/*
  * Нехай функція getSortedCarsOnSale повертає масив автомобілів
  * на розпродажі (Властивість onSale), відсортованих за зростанням ціни.
+ * Потрібно знайти марку Honda
  */
-const getSortedCarsOnSale = cars => {};
+const getSortedCarsOnSale = cars => {
+  return cars
+    .filter(car => {
+      return car.onSale;
+    })
+    .toSorted((currCar, prevCar) => {
+      return currCar.price - prevCar.price;
+    })
+    .find(car => {
+      return car.make === "Honda";
+    });
+};
 
 // console.table(getSortedCarsOnSale(allCars));

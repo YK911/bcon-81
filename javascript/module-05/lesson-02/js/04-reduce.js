@@ -1,4 +1,4 @@
-/**
+/*
  * Метод reduce
  *
  * - Поелементно перебирає оригінальний масив
@@ -6,7 +6,13 @@
  */
 
 const numbers = [5, 10, 15, 20, 25];
-const total = numbers;
+// const total = numbers.reduce((acc, number, idx, arr) => {
+//   console.log("acc", acc);
+//   console.log("number", number);
+
+//   return acc + number;
+// }, 0);
+
 // console.log(total);
 
 /**
@@ -19,7 +25,9 @@ const salary = {
   ajax: 150,
 };
 
-const totalSalary = salary;
+const totalSalary = Object.values(salary).reduce((acc, number) => {
+  return acc + number;
+}, 0);
 // console.log(totalSalary);
 
 /**
@@ -33,10 +41,12 @@ const players = [
   { id: "player-5", name: "Chelsey", timePlayed: 80, online: true },
 ];
 
-const totalTimePlayed = players;
+const totalTimePlayed = players.reduce((acc, player) => {
+  return acc + player.timePlayed;
+}, 0);
 // console.log(totalTimePlayed);
 
-/**
+/*
  * Рахуємо загальну суму товарів кошика
  */
 const cart = [
@@ -45,5 +55,16 @@ const cart = [
   { label: "Lemons", price: 70, quantity: 4 },
 ];
 
-const totalAmount = cart;
+const totalAmount = cart.reduce((acc, item) => {
+  return acc + item.price * item.quantity;
+}, 0);
 // console.log(totalAmount);
+
+const categoryAmount = cart.reduce((acc, item) => {
+  const key = item.label.toLowerCase();
+  acc[key] = item.price * item.quantity;
+
+  return acc;
+  // return undefined
+}, {});
+// console.log("🚀 ~ categoryAmount:", categoryAmount);
