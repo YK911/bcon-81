@@ -9,11 +9,26 @@
 /*
  * Глобальний контекст
  */
-function foo() {
-  console.log("foo -> this", this);
+
+function print(x, y) {
+  // params: let x, let y
+  // arguments: []
+  // this: undefined
+  console.log("print -> this", this);
+
+  function showThis() {
+    console.log(this);
+  }
+  // return undefined
 }
 
-// foo();
+// print();
+
+function fnAAA(callback) {
+  callback();
+}
+
+// fnAAA(showThis);
 
 /*
  * Контекст методу об'єкта
@@ -22,7 +37,8 @@ function foo() {
 const user = {
   tag: "Mango",
   showTag() {
-    console.log("showTag -> this", this);
+    // this === user;
+    console.log(this); // undefined
   },
 };
 
@@ -62,7 +78,7 @@ const poly = {
 
 // poly.showTag();
 
-// const outerShowTag = poly.showTag;
+const outerShowTag = poly.showTag;
 
 // outerShowTag();
 
@@ -78,9 +94,9 @@ const jacob = {
   },
 };
 
-function invokeAction(action) {
-  console.log(action);
-  action();
+function invokeAction(callback) {
+  console.log(callback);
+  callback();
 }
 
 // invokeAction(jacob.showTag);
