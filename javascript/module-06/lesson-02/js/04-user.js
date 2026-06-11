@@ -16,9 +16,9 @@ class User {
     return this.#email;
   }
   set email(newEmail) {
-    const isValid = new RegExp("^[a-z]+@[a-z]+\.[a-z]{2,}$");
+    const isValid = new RegExp("^[a-z]+@[a-z]+\.[a-z]{2,}$").test(newEmail);
 
-    if (isValid.test(newEmail)) {
+    if (isValid) {
       this.#email = newEmail;
     } else {
       this.#email = "";
