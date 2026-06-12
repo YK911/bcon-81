@@ -1,30 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Search</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <style>
+      ul,
+      ol {
+        padding: 0;
+        list-style: none;
+      }
+      form {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .hover-up {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .hover-up:hover {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        transform: translateY(-5px);
+      }
+      .modal-body {
+        display: grid;
+        gap: 16px;
+      }
+      .left {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        gap: 10px;
+        align-items: center;
+        grid-template-areas:
+          "one ."
+          "one ."
+          "one .";
+
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 12px;
+          overflow: hidden;
+
+          &:first-child {
+            grid-area: one;
+          }
+        }
+      }
+      .right {
+      }
+    </style>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
   </head>
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <form action="submit" class="js-form car-search">
-      <div class="car-group">
-        <input type="text" name="query" class="car-input" placeholder="Пошук" />
+    <section class="d-flex flex-column gap-4">
+      <div class="container">
+        <form class="js-form">
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="text"
+              name="query"
+              placeholder="Type make or model for car search"
+              aria-label="Text input with segmented dropdown button"
+            />
+            <button class="btn btn-outline-secondary" type="submit">
+              Search
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end js-dropdown">
+              <li>
+                <button class="dropdown-item" data-value="make" type="button">
+                  Make
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" data-value="model" type="button">
+                  Model
+                </button>
+              </li>
+            </ul>
+          </div>
+        </form>
       </div>
-      <div class="car-group">
-        <select name="options" class="car-select">
-          <option value="car">Марка</option>
-          <option value="type">Модель</option>
-        </select>
-      </div>
-      <button class="car-button">Пошук</button>
-    </form>
 
-    <ul class="js-list car-list"></ul>
+      <div class="container">
+        <ul class="js-list car-list row flex-wrap">
+          <li class="col-4 mb-4" id="1">
+            <div class="card hover-up">
+              <img
+                src="https://static.wixstatic.com/media/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg/v1/fill/w_520,h_338,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body row">
+                <div class="col-8">
+                  <h5 class="col card-title">Audi A6</h5>
+                  <p class="col card-text">30000 $</p>
+                </div>
+                <button
+                  class="col-4 btn btn-outline-primary"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  More info
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Car Details
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="left">
+              <img
+                src="https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+                alt=""
+              />
+              <img
+                src="https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+                alt=""
+              />
+              <img
+                src="https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+                alt=""
+              />
+              <img
+                src="https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+                alt=""
+              />
+            </div>
+            <div class="right">
+              <h3>Volvo XC60</h3>
+              <p>Price: 7000$</p>
+              <hr />
+              <p>
+                A Scandinavian crossover that sets the standard for automotive
+                safety. It offers a discreet premium design, a cozy interior
+                made of high-quality materials, and balanced driving
+                performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="./js/06-practice.js"></script>
   </body>

@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "car": "Audi",
+    "type": "A6",
+    "price": 30000,
+    "thumbnail": "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    "description": "Елегантний та динамічний бізнес-седан, який поєднує в собі преміальний комфорт, передові цифрові технології та фірмову систему повного приводу quattro для впевненого драйву за будь-яких умов.",
+    "images": [
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+    ]
+  },
+  {
+    "id": 2,
+    "car": "Honda",
+    "type": "Civic",
+    "price": 12000,
+    "thumbnail": "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    "description": "Надійний та економічний компактний автомобіль із виразним спортивним характером. Ідеально підходить для щоденних міських поїздок завдяки гострому керуванню та ергономічному салону.",
+    "images": [
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+    ]
+  },
+  {
+    "id": 3,
+    "car": "Audi",
+    "type": "Q7",
+    "price": 40000,
+    "thumbnail": "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    "description": "Повнорозмірний преміум-кросовер, що пропонує безкомпромісний простір, розкішні матеріали оздоблення та високу прохідність. Чудовий вибір для комфортних сімейних подорожей на будь-які відстані.",
+    "images": [
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+    ]
+  },
+  {
+    "id": 4,
+    "car": "BMW",
+    "type": "5 series",
+    "price": 9000,
+    "thumbnail": "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    "description": "Легендарний представник німецького автопрому, де акцент зроблено на драйверські емоції та бездоганну керованість. Поєднує в собі строгий бізнес-стиль та потужні технічні характеристики.",
+    "images": [
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+    ]
+  },
+  {
+    "id": 5,
+    "car": "Honda",
+    "type": "Accord",
+    "price": 20000,
+    "thumbnail": "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    "description": "Комфортабельний седан середнього класу, відомий своєю високою надійністю, просторим салоном та відмінною плавністю ходу. Оснащений сучасними системами безпеки та допомоги водієві.",
+    "images": [
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+    ]
+  },
+  {
+    "id": 6,
+    "car": "Volvo",
+    "type": "XC60",
+    "price": 7000,
+    "thumbnail": "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    "description": "Скандинавський кросовер, який є еталоном автомобільної безпеки. Пропонує стриманий преміальний дизайн, затишний інтер'єр із високоякісних матеріалів та збалансовані ходові якості.",
+    "images": [
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop"
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +10,16 @@
   <body>
     <p><a href="index.html">Go back</a></p>
 
-    <input type="text" class="js-user-name" />
+    <label>
+      <span>Username</span>
+      <input type="text" class="js-user-name" />
+    </label>
+    <p class="alert js-alert">Username must contains minimum 3 char</p>
+
+    <p>
+      Output:
+      <code class="js-output"></code>
+    </p>
 
     <script src="./js/02-input.js"></script>
   </body>

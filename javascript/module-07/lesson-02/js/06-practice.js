@@ -1,57 +1,111 @@
-/**
+/*
  * Реалізуй пошук автомобілів по сайту
  * Користувач потрапляє на сайт і одразу бачить форму для пошуку і картки всіх автомобілів (масив cars)
- * Користувач може ввести в форму назву Марки або Моделі авто і в тегу селект обрати що він ввів Марку або Модель (https://prnt.sc/PkkZZRy_ggtT)
+ * Користувач може ввести в форму назву Марки або Моделі авто і в тегу селект обрати що він ввів Марку або Модель
  * Після натискання кнопки пошуку (сабміт форми) відмалюй авто які збігаються з критеріями пошуку
  */
 
 const cars = [
   {
     id: 1,
-    car: "Audi",
-    type: "A6",
+    make: "Audi",
+    model: "A6",
     price: 30000,
-    img: "https://static.wixstatic.com/media/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg/v1/fill/w_520,h_338,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg",
+    thumbnail:
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    description:
+      "An elegant and dynamic business sedan that combines premium comfort, advanced digital technologies and the brand's quattro all-wheel drive system for confident driving in all conditions.",
+    images: [
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17888846/pexels-photo-17888846.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    ],
   },
   {
     id: 2,
-    car: "Honda",
-    type: "Civic",
+    make: "Honda",
+    model: "Civic",
     price: 12000,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU",
+    thumbnail:
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    description:
+      "A reliable and economical compact car with a distinctly sporty character. Ideal for everyday city driving thanks to its sharp handling and ergonomic interior.",
+    images: [
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/16475137/pexels-photo-16475137.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    ],
   },
   {
     id: 3,
-    car: "Audi",
-    type: "Q7",
+    make: "Audi",
+    model: "Q7",
     price: 40000,
-    img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg",
+    thumbnail:
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    description:
+      "A full-size premium crossover offering uncompromising space, luxurious materials and high off-road capability. A great choice for comfortable family trips of any distance.",
+    images: [
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/17264100/pexels-photo-17264100.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    ],
   },
   {
     id: 4,
-    car: "BMW",
-    type: "5 series",
+    make: "BMW",
+    model: "5 series",
     price: 9000,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU",
+    thumbnail:
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    description:
+      "A legendary representative of the German automotive industry, where the emphasis is on driver emotions and impeccable handling. It combines a strict business style and powerful technical characteristics.",
+    images: [
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/25691078/pexels-photo-25691078.png?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    ],
   },
   {
     id: 5,
-    car: "Honda",
-    type: "Accord",
+    make: "Honda",
+    model: "Accord",
     price: 20000,
-    number: "+380000000000",
-    img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg",
+    thumbnail:
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    description:
+      "A comfortable mid-range sedan known for its high reliability, spacious interior, and excellent ride quality. Equipped with modern safety and driver assistance systems.",
+    images: [
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/29280440/pexels-photo-29280440.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    ],
   },
   {
     id: 6,
-    car: "Volvo",
-    type: "XC60",
+    make: "Volvo",
+    model: "XC60",
     price: 7000,
-    img: "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320",
+    thumbnail:
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    description:
+      "A Scandinavian crossover that sets the standard for automotive safety. It offers a discreet premium design, a cozy interior made of high-quality materials, and balanced driving performance.",
+    images: [
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+      "https://images.pexels.com/photos/15709337/pexels-photo-15709337.jpeg?auto=compress&cs=tinysrgb&w=800&h=533&fit=crop",
+    ],
   },
 ];
 
 const elements = {
   form: document.querySelector(".js-form"),
   container: document.querySelector(".js-list"),
+  dropdown: document.querySelector(".js-dropdown"),
 };
