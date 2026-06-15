@@ -106,6 +106,104 @@ const cars = [
 
 const elements = {
   form: document.querySelector(".js-form"),
-  container: document.querySelector(".js-list"),
+  carsList: document.querySelector(".js-list"),
   dropdown: document.querySelector(".js-dropdown"),
+  modalInfo: document.querySelector(".modal-body"),
 };
+let optionType = elements.dropdown.querySelector("button.dropdown-item").dataset
+  .value;
+
+renderCarsMarkup(elements.carsList, cars);
+
+elements.form.addEventListener("submit", handleFormSubmit);
+elements.dropdown.addEventListener("click", handleDropDownClick);
+elements.carsList.addEventListener("click", handleMoreInfoClick);
+
+//* Functions
+function createCarMarkup(car = {}) {
+  return `<li class="col-4 mb-4 car-item" id="${car.id}">
+            <div class="card hover-up">
+              <img
+                class="card-img-top"
+                src="${car.thumbnail}"
+                alt="${car.make} ${car.model}"
+              />
+              <div class="card-body row">
+                <div class="col-8">
+                  <h5 class="col card-title">${car.make} ${car.model}</h5>
+                  <p class="col card-text">${car.price} $</p>
+                </div>
+                <button
+                  class="col-4 btn btn-outline-primary"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  More info
+                </button>
+              </div>
+            </div>
+          </li>`;
+}
+
+function createModalMarkup(car = {}) {
+  return ` <div class="left">
+              ${car.images
+                .map(
+                  img => `<img src="${img}" alt="${car.make} ${car.model}" />`
+                )
+                .join("")}
+            </div>
+            <div class="right">
+              <h3>${car.make} ${car.model}</h3>
+              <p>Price: ${car.price}$</p>
+              <hr />
+              <p>${car.description}</p>
+            </div>`;
+}
+
+function renderCarsMarkup(el, cars = []) {
+  el.innerHTML = cars.map(createCarMarkup).join("");
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const query = form.elements.query.value;
+
+  if (query.trim().length === 0) {
+    alert("Please, fill search input");
+    renderCarsMarkup(elements.carsList, cars);
+    form.reset();
+    return;
+  }
+
+  const filteredCars = searchCars(query, optionType);
+  renderCarsMarkup(elements.carsList, filteredCars);
+
+  form.reset();
+}
+
+function handleDropDownClick(event) {
+  const targetEl = event.target;
+
+  if (targetEl.nodeName !== "BUTTON") return;
+
+  optionType = targetEl.dataset.value;
+}
+
+function handleMoreInfoClick(event) {
+  const targetEl = event.target;
+
+  if (targetEl.nodeName !== "BUTTON") return;
+
+  const carId = Number(targetEl.closest(".car-item").id);
+  const currentCarInfo = cars.find(car => {
+    return car.id === carId;
+  });
+  elements.modalInfo.innerHTML = createModalMarkup(currentCarInfo);
+}
+
+function searchCars(searchQuery, type) {
+  return cars.filter(car => car[type].includes(searchQuery));
+}
