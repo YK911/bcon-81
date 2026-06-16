@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 24px;
+        padding: 0 15px;
+      }
+
+      .usernames li {
+        padding: 8px;
+        border: 2px dashed tomato;
+        text-transform: uppercase;
+      }
+
+      .usernames li:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button class="js-append" type="button">Append LI</button>
+      <button class="js-prepend" type="button">Prepend LI</button>
+      <button class="js-insert" type="button">Insert LI</button>
+      <button class="js-insertadj" type="button">InsertAdjHTML LI</button>
+    </div>
+    <h1>Usernames</h1>
+    <ul class="usernames">
+      <li>Mango</li>
+    </ul>
+    <ul class="usernames1">
+      <li>Mango</li>
+    </ul>
+
+    <script>
+      const appendBtn = document.querySelector(".js-append");
+      const prependBtn = document.querySelector(".js-prepend");
+      const insertBtn = document.querySelector(".js-insert");
+      const insertAdjBtn = document.querySelector(".js-insertadj");
+      const list = document.querySelector(".usernames");
+      const list1 = document.querySelector(".usernames1");
+      const firstLi = document.querySelector(".usernames > li");
+      console.log("🚀 ~ firstLi:", firstLi);
+
+      const res = firstLi.toString();
+      console.log("🚀 ~ res:", typeof res);
+      console.log("🚀 ~ firstLi:", firstLi);
+
+      appendBtn.addEventListener("click", first => {
+        // Adds an item to the end of the list
+        const lastItem = document.createElement("li");
+        lastItem.textContent = "Poly";
+        list.append(lastItem);
+      });
+      prependBtn.addEventListener("click", first => {
+        // Adds an item to the beginning of the list
+        const firstItem = document.createElement("li");
+        firstItem.textContent = "Ajax";
+        list.prepend(firstItem);
+      });
+      insertBtn.addEventListener("click", first => {
+        list.prepend(firstLi);
+      });
+      insertAdjBtn.addEventListener("click", first => {
+        list.insertAdjacentHTML("beforeend", firstLi);
+      });
+
+      const names = ["Poly", "Ajax", "Neptun", "Saturn", "Earth"];
+      list.insertAdjacentHTML("beforeend", names);
+
+      const render = (name, idx) => {
+        setTimeout(
+          () => {
+            list1.innerHTML += `<li>${name}</li>`;
+          },
+          1000 * (idx + 1)
+        );
+      };
+
+      //   names.forEach(render);
+    </script>
+  </body>
+</html>

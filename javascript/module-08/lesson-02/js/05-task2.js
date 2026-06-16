@@ -14,7 +14,12 @@ const product = {
   },
 };
 
-function displayProductInfo() {
+function displayProductInfo({
+  details: { weight, brand, color },
+  name,
+  price,
+  category,
+} = {}) {
   console.log(`Назва товару: ${name}`);
   console.log(`Ціна: ${price} грн`);
   console.log(`Категорія: ${category}`);
