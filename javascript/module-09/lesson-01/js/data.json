@@ -1,0 +1,11 @@
+{
+  "name": "Mango",
+  "age": 12,
+  "isOnline": true,
+  "location": {
+    "country": "Ukraine",
+    "city": "Kyiv"
+  },
+  "hobbies": ["music", "reading"],
+  "isMarried": null
+}
