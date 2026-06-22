@@ -1,6 +1,6 @@
-import '../common.css';
+import "../common.css";
 
-/**
+/*
  * - Показуємо та ховаємо, додаючи/видаляючи клас is-visible
  * - Ховаємо через певний час
  * - Ховаємо при кліці
@@ -9,17 +9,27 @@ import '../common.css';
 
 const NOTIFICATION_DELAY = 3000;
 let timeoutId = null;
-const notification = document.querySelector('.js-alert');
+const notification = document.querySelector(".js-alert");
+
+notification.addEventListener("click", onNotificationClick);
+showNotification();
 
 /*
  * Функції
  */
-function onNotificationClick() {}
+function onNotificationClick() {
+  hideNotification();
+  clearTimeout(timeoutId);
+}
 
 function showNotification() {
   console.log(
-    'Закриваємо сповіщення автоматично, щоб воно не залишалося відкритим'
+    "Закриваємо сповіщення автоматично, щоб воно не залишалося відкритим"
   );
+  notification.classList.add("is-visible");
+  timeoutId = setTimeout(hideNotification, NOTIFICATION_DELAY);
 }
 
-function hideNotification() {}
+function hideNotification() {
+  notification.classList.remove("is-visible");
+}

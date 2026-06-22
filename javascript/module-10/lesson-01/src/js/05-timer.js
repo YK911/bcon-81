@@ -6,11 +6,42 @@ import "../common.css";
  */
 
 class Timer {
-  constructor() {}
+  constructor({ onTick, clockface }) {
+    this.intervalId = null;
+    this.isActive = false;
+    this.onTick = onTick;
+    this.clockface = clockface;
 
-  start() {}
+    this.init();
+  }
 
-  stop() {}
+  init() {
+    const time = this.getTimeComponents(0);
+    this.onTick(time, this.clockface);
+  }
+
+  start() {
+    if (this.isActive) return;
+
+    const startTime = Date.now();
+    this.isActive = !this.isActive;
+    startBtn.disabled = true;
+
+    this.intervalId = setInterval(() => {
+      const currentTime = Date.now();
+      const deltaTime = currentTime - startTime;
+      const time = this.getTimeComponents(deltaTime);
+      this.onTick(time, this.clockface);
+    }, 1000);
+  }
+
+  stop() {
+    clearInterval(this.intervalId);
+    this.isActive = false;
+    const time = this.getTimeComponents(0);
+    this.onTick(time, this.clockface);
+    startBtn.disabled = false;
+  }
 
   /*
    * - Приймає час в мілісекундах
@@ -40,18 +71,31 @@ const startBtn = document.querySelector("button[data-action-start]");
 const stopBtn = document.querySelector("button[data-action-stop]");
 const clockface = document.querySelector(".js-clockface");
 
+// const startBtn1 = document.querySelector(".timer-1 button[data-action-start]");
+// const stopBtn1 = document.querySelector(".timer-1 button[data-action-stop]");
+// const clockface1 = document.querySelector(".timer-1 .js-clockface");
+
 const timer = new Timer({
   onTick: updateClockface,
+  clockface: clockface,
 });
 
-// startBtn.addEventListener("click", timer.start.bind(timer));
-// stopBtn.addEventListener("click", timer.stop.bind(timer));
+startBtn.addEventListener("click", timer.start.bind(timer));
+stopBtn.addEventListener("click", timer.stop.bind(timer));
+
+// const timer1 = new Timer({
+//   onTick: updateClockface,
+//   clockface: clockface1,
+// });
+
+// startBtn1.addEventListener("click", timer1.start.bind(timer1));
+// stopBtn1.addEventListener("click", timer1.stop.bind(timer1));
 
 /*
  * - Приймає час в мілісекундах
  * - Вираховує скільки в них вміщається годин/хвилин/секунд
- * - Рисує інтерфейс
+ * - Рендерить інтерфейс
  */
-function updateClockface({ hours, mins, secs }) {
-  clockface.textContent = `${hours}:${mins}:${secs}`;
+function updateClockface({ hours, mins, secs }, clockInteface) {
+  clockInteface.textContent = `${hours}:${mins}:${secs}`;
 }
