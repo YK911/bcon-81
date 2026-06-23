@@ -25,3 +25,40 @@ import "../common.css";
 const startBtn = document.querySelector(".start-btn");
 const container = document.querySelector(".container");
 const result = document.querySelector(".result");
+
+startBtn.addEventListener("click", handleStartGame);
+
+function handleStartGame() {
+  const promises = [...container.children].map(() => {
+    return new Promise((resolve, reject) => {
+      const isSuccess = Math.random() > 0.5;
+
+      if (isSuccess) {
+        resolve("🤑");
+      } else {
+        reject("👿");
+      }
+    });
+  });
+
+  Promise.allSettled(promises).then(results => {
+    results.forEach((res, i) => {
+      container.children[i].textContent = "";
+
+      setTimeout(
+        () => {
+          container.children[i].textContent = res.value || res.reason;
+
+          if (i === results.length - 1) {
+            result.textContent = isWinner ? "Winner" : "Loser";
+          }
+        },
+        1000 * (i + 1)
+      );
+    });
+
+    const isWinner =
+      results.every(result => result.status === "fulfilled") ||
+      results.every(result => result.status === "rejected");
+  });
+}
