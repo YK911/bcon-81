@@ -1,15 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Axios options</title>
+    <style>
+      .hide {
+        opacity: 0;
+      }
+      [class*="spinner"] {
+        transition: 200ms;
+      }
+      img {
+        object-fit: cover;
+      }
+    </style>
   </head>
   <body>
     <p>
       <a href="index.html">← Go Back </a>
     </p>
 
-    <script src="src/js/02-axios-opts.js" type="module"></script>
+    <!-- <input list="breeds" />
+    <datalist id="breeds">
+      <option value="cat-1">Cat 1</option>
+      <option value="cat-2">Cat 2</option>
+      <option value="cat-3">Cat 3</option>
+    </datalist> -->
+
+    <section>
+      <div class="container">
+        <select
+          class="form-select mb-3 js-breed-select"
+          name="breed"
+          aria-label="Cats breeds select"
+        ></select>
+
+        <div
+          class="spinner-border text-primary mx-auto d-block hide js-spinner"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="js-cat-card mx-auto" style="max-width: 18rem"></div>
+      </div>
+    </section>
+
+    <!-- <script src="src/js/02-axios-opts.js" type="module"></script> -->
+    <script src="src/js/02-practice.js" type="module"></script>
   </body>
 </html>
