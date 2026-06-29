@@ -1,0 +1,22 @@
+.header {
+  padding: 14px 0;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav {
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}

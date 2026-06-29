@@ -1,0 +1,36 @@
+.btn {
+  padding: 8px 20px;
+  min-width: 129px;
+  min-height: 42px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+
+  border-radius: 100px;
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+
+  transition: 200ms;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #6b0609;
+}
+.btn-primary:hover {
+  opacity: 0.5;
+}
+
+.btn-secondary {
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+  color: #080c09;
+  background-color: rgba(8, 12, 9, 0.05);
+}

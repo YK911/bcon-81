@@ -1,0 +1,15 @@
+/* Common styles */
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./container.css');
+@import url('./common.css');
+
+/* Components */
+@import url('./button.css');
+
+/* Sections style */
+@import url('./header.css');
+@import url('./furnutire.css');
+@import url('./products.css');
+
+@import url('./footer.css');
