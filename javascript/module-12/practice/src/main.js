@@ -4,9 +4,13 @@ import { renderCategories } from './scripts/render/categories';
 import { fetchProducts } from './scripts/services-api/products';
 import { renderProducts } from './scripts/render/products';
 import { showLoadMoreBtn, hideLoadMoreBtn } from './scripts/render/loadMoreBtn';
-import { handleCategories } from './scripts/handlers/handlers';
+import {
+  handleCategories,
+  handleProductDetails,
+} from './scripts/handlers/handlers';
 
 init();
+refs.productsList.addEventListener('click', handleProductDetails);
 
 async function init() {
   const categories = await fetchCategories();

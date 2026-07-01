@@ -27,3 +27,16 @@ export async function handleCategories(event) {
 }
 
 export async function handleLoadMoreClick() {}
+
+export function handleProductDetails(event) {
+  const detailsButton = event.target;
+
+  const isDetailsButton =
+    detailsButton.nodeName === 'BUTTON' &&
+    detailsButton.classList.contains('js-products-btn');
+
+  if (!isDetailsButton) return;
+
+  const detailsCard = detailsButton.closest('.js-products-card');
+  console.log('🚀 ~ handleProductDetails:', detailsCard);
+}

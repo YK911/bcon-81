@@ -5,8 +5,15 @@
   margin-bottom: 32px;
 }
 .products-card {
+  display: flex;
+  flex-direction: column;
 }
 .products-ill {
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+.products-wrapper {
+  flex-grow: 1;
   margin-bottom: 16px;
 }
 .products-title {
@@ -28,7 +35,6 @@
   border-radius: 50%;
 }
 .products-price {
-  margin-bottom: 16px;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.6;
