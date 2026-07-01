@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,12 +9,12 @@
   <body>
     <div class="container">
       <!-- Форма пошуку -->
-      <form class="search-form">
+      <form class="search-form" name="searchForm">
         <input
+          class="search-input"
           type="text"
           name="query"
           placeholder="Enter a keyword..."
-          class="search-input"
         />
         <button type="submit" class="btn">Search</button>
       </form>
@@ -22,14 +22,13 @@
       <!-- Лоадер -->
       <div id="loader" class="loader hidden">Loading...</div>
 
-      <!-- Список статей -->
-      <ul class="articles"></ul>
+      <!-- Список постів -->
+      <ul class="posts js-posts"></ul>
 
       <!-- Кнопка "Завантажити ще" -->
       <button class="btn load-more hidden">Load More</button>
     </div>
 
-    <!-- <script type="module" src="src/index.js"></script> -->
-    <script type="module" src="src/solution.js"></script>
+    <script type="module" src="src/index.js"></script>
   </body>
 </html>

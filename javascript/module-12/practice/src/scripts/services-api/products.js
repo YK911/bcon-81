@@ -7,17 +7,19 @@ export async function fetchProducts(id) {
     ['sortDirect', 'asc'],
     ['sortName', 'name'],
     ['type', 'popular'],
+    ['page', 1],
+    ['limit', 8],
   ]);
 
   if (id !== 'all') {
-    params.set('id', id);
+    params.set('category', id);
   }
 
   try {
     const { data } = await axios({
       method: 'get',
       url: ENDPOINTS.furniture,
-      params,
+      params: Object.fromEntries(params),
     });
 
     return data;
